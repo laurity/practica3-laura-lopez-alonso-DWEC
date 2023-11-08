@@ -1,6 +1,6 @@
 export let nombre;
 let apellidos;
-let fecha;
+export let fecha = new Date();
 
 export let nombreCompleto;
 export let nombreCompletoLonguitud;
@@ -17,6 +17,10 @@ export const saludo = () => {
   while (apellidos === undefined || apellidos === "") {
     apellidos = prompt("Introduzca valores válidos");
   }
+  fecha = prompt('introduzca la fecha en el siguiente formato XX/XX/XXXX')
+  while (fecha = undefined || fecha === ""){
+    fecha = prompt("introduzca valores válidos")
+  }
 };
 export const longitud = () => {
   nombreCompleto = nombre + " " + apellidos;
@@ -29,11 +33,12 @@ export const primeraLetra = () => {
   }
 };
 export const ultimaLetra = () => {
-  ultimo = nombreCompleto.toUpperCase().lastIndexOf("A", nombreCompleto.length) + 1;
+  ultimo =
+    nombreCompleto.toUpperCase().lastIndexOf("A", nombreCompleto.length) + 1;
   if (ultimo === 0) {
     ultimo = "Ninguna, porque no contiene A";
   }
 };
 export const quitarLetras = () => {
-    quitar = nombreCompleto.slice(3);
+  quitar = nombreCompleto.slice(3);
 };
