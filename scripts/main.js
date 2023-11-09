@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
   calcularCoseno();
   write();
 });
+
 const write = () => {
   document.open();
   document.write(`<p>Buenos días, <b>${nombre}</b></p>`);
@@ -52,5 +53,20 @@ const write = () => {
   document.write(`<p>El <b>coseno de 180 </b> es <b>${coseno}</b> </p>`);
   document.write(`<p>El número mayor de <b>(34, 67, 23, 75, 35, 19)</b> es ${mayor}</p>`);
   document.write(`<p>Ejemplo de número al azar entre 0 y 100: <b>${random}</b></p>`);
+  document.write(`<button id="abrirVentana">Abrir Ventana</button>`);
+  document.write(`<button id="reiniciarVentana">Reiniciar</button>`);
   document.close();
+
+  const abrirVentanaBtn = document.getElementById("abrirVentana");
+const reiniciarVentanaBtn = document.getElementById("reiniciarVentana");
+
+
+ abrirVentanaBtn.addEventListener("click", () => {
+  window.open("http://127.0.0.1:5500/ventanaNueva.html", "_blank", "width=400,height=300,resizable=no");
+});
+
+reiniciarVentanaBtn.addEventListener("click", () => { 
+    location.reload();
+});
 };
+
