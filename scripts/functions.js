@@ -10,6 +10,8 @@ export let fechaNacimiento = new Date();
 export let edad;
 
 export let coseno;
+export let mayor = Math.max(34, 67, 23, 75, 35, 19);
+export let random = Math.round(Math.random() * 100)
 export const saludo = () => {
   nombre = prompt("Hola, dígame su nombre");
   while (nombre === undefined || nombre === "") {
@@ -45,12 +47,10 @@ export const quitarLetras = () => {
   quitar = nombreCompleto.slice(3);
 };
 export const calcularEdad = () => {
-  const fechaNac = new Date(fechaNacimiento);
-  const fechaActual = new Date();
+  const fechaNac = new Date(fechaNacimiento).getFullYear();
+  const fechaActual = new Date().getFullYear();
   
- edad = fechaActual.getFullYear() - fechaNac.getFullYear();
-  
-
+ edad = fechaActual - fechaNac;
   
 };
 export const calcularEstacion = () => {

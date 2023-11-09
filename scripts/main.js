@@ -16,6 +16,8 @@ import { ultimo } from "./functions.js";
 import { quitar } from "./functions.js";
 import { edad } from "./functions.js";
 import {coseno} from "./functions.js";
+import {mayor} from "./functions.js";
+import { random } from "./functions.js";
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -48,5 +50,7 @@ const write = () => {
   );
   document.write(`<p>Tu <b>edad</b> es ${edad} </p>`);
   document.write(`<p>El <b>coseno de 180 </b> es <b>${coseno}</b> </p>`);
+  document.write(`<p>El número mayor de <b>(34, 67, 23, 75, 35, 19)</b> es ${mayor}</p>`);
+  document.write(`<p>Ejemplo de número al azar entre 0 y 100: <b>${random}</b></p>`);
   document.close();
 };
