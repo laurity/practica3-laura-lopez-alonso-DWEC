@@ -1,13 +1,15 @@
 export let nombre;
 let apellidos;
-export let fecha = new Date();
-
 export let nombreCompleto;
 export let nombreCompletoLonguitud;
 export let primero;
 export let ultimo;
 export let quitar;
 
+export let fechaNacimiento = new Date();
+export let edad;
+
+export let coseno;
 export const saludo = () => {
   nombre = prompt("Hola, dígame su nombre");
   while (nombre === undefined || nombre === "") {
@@ -17,9 +19,9 @@ export const saludo = () => {
   while (apellidos === undefined || apellidos === "") {
     apellidos = prompt("Introduzca valores válidos");
   }
-  fecha = prompt('introduzca la fecha en el siguiente formato XX/XX/XXXX')
-  while (fecha = undefined || fecha === ""){
-    fecha = prompt("introduzca valores válidos")
+  fechaNacimiento = prompt('introduzca la fecha de nacimiento en el siguiente formato XX/XX/XXXX')
+  while (fechaNacimiento === undefined || fechaNacimiento === ""){
+    fechaNacimiento = prompt("introduzca valores válidos")
   }
 };
 export const longitud = () => {
@@ -41,4 +43,22 @@ export const ultimaLetra = () => {
 };
 export const quitarLetras = () => {
   quitar = nombreCompleto.slice(3);
+};
+export const calcularEdad = () => {
+  const fechaNac = new Date(fechaNacimiento);
+  const fechaActual = new Date();
+  
+ edad = fechaActual.getFullYear() - fechaNac.getFullYear();
+  
+
+  
+};
+export const calcularEstacion = () => {
+
+};
+export const calcularCoseno = () => {
+  let radianes = 180 * (Math.PI / 180);
+
+  coseno = Math.cos(radianes);
+
 };
