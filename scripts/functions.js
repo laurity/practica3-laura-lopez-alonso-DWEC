@@ -7,7 +7,7 @@ export let ultimo;
 export let quitar;
 
 export let fechaNacimiento = new Date();
-let fechaNow = new Date().now();
+let fechaNow = new Date();
 export let edad;
 export let estacion;
 export let anio;
@@ -68,15 +68,15 @@ export const calcularEstacion = () => {
   let fechaMes = fechaNac.getMonth();
   let fechaDia = fechaNac.getDate();
 
-  if ((fechaMes === 2 && fechaDia >= 20) || (fechaMes === 3) || (fechaMes === 4 && fechaDia <= 20)) {
+  if ((fechaMes === 2 && fechaDia >= 20) || (fechaMes >= 3 && fechaMes <= 4) || (fechaMes === 5 && fechaDia <= 19)) {
     estacion = 'primavera';
-} else if ((fechaMes === 5 && fechaDia >= 21) || (fechaMes >= 6 && fechaMes <= 8) || (fechaMes === 9 && fechaDia <= 22)) {
+  } else if ((fechaMes === 5 && fechaDia >= 20) || (fechaMes >= 6 && fechaMes <= 7) || (fechaMes === 8 && fechaDia <= 21)) {
     estacion = 'verano';
-} else if ((fechaMes === 9 && fechaDia >= 23) || (fechaMes >= 10 && fechaMes <= 11) || (fechaMes === 0 && fechaDia <= 19)) {
+  } else if ((fechaMes === 8 && fechaDia >= 22) || (fechaMes >= 9 && fechaMes <= 10) || (fechaMes === 11 && fechaDia <= 20)) {
     estacion = 'otoño';
-} else {
+  } else {
     estacion = 'invierno';
-}
+  }
 
 anio = new Date(fechaNacimiento).getFullYear();
 };
