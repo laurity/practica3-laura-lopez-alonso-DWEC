@@ -25,8 +25,15 @@ export const saludo = () => {
   while (apellidos === undefined || apellidos === "") {
     apellidos = prompt("Introduzca valores válidos").trim();
   }
-  fechaNacimiento = prompt('introduzca la fecha de nacimiento en el siguiente formato YYYY/MM/DD').trim();
-  while (fechaNacimiento === undefined || fechaNacimiento === "" || fechaNacimiento.length !== 10 || fechaNacimiento > fechaNow) {
+  fechaNacimiento = prompt(
+    "introduzca la fecha de nacimiento en el siguiente formato YYYY/MM/DD"
+  ).trim();
+  while (
+    fechaNacimiento === undefined ||
+    fechaNacimiento === "" ||
+    fechaNacimiento.length !== 10 ||
+    fechaNacimiento > fechaNow
+  ) {
     fechaNacimiento = prompt("introduzca valores válidos").trim();
   }
 };
@@ -53,36 +60,48 @@ export const quitarLetras = () => {
 export const calcularEdad = () => {
   const fechaNac = new Date(fechaNacimiento);
   const fechaActual = new Date();
-  
- edad = fechaActual.getFullYear() - fechaNac.getFullYear();
 
- if (
-  fechaNac.getMonth() > fechaActual.getMonth() || (fechaNac.getMonth() === fechaActual.getMonth() &&fechaNac.getDate() > fechaActual.getDate()))
-   {
-  edad--;
-}
-  
+  edad = fechaActual.getFullYear() - fechaNac.getFullYear();
+
+  if (
+    fechaNac.getMonth() > fechaActual.getMonth() ||
+    (fechaNac.getMonth() === fechaActual.getMonth() &&
+      fechaNac.getDate() > fechaActual.getDate())
+  ) {
+    edad--;
+  }
 };
 export const calcularEstacion = () => {
   let fechaNac = new Date(fechaNacimiento);
   let fechaMes = fechaNac.getMonth();
   let fechaDia = fechaNac.getDate();
 
-  if ((fechaMes === 2 && fechaDia >= 20) || (fechaMes >= 3 && fechaMes <= 4) || (fechaMes === 5 && fechaDia <= 19)) {
-    estacion = 'primavera';
-  } else if ((fechaMes === 5 && fechaDia >= 20) || (fechaMes >= 6 && fechaMes <= 7) || (fechaMes === 8 && fechaDia <= 21)) {
-    estacion = 'verano';
-  } else if ((fechaMes === 8 && fechaDia >= 22) || (fechaMes >= 9 && fechaMes <= 10) || (fechaMes === 11 && fechaDia <= 20)) {
-    estacion = 'otoño';
+  if (
+    (fechaMes === 2 && fechaDia >= 20) ||
+    (fechaMes >= 3 && fechaMes <= 4) ||
+    (fechaMes === 5 && fechaDia <= 19)
+  ) {
+    estacion = "primavera";
+  } else if (
+    (fechaMes === 5 && fechaDia >= 20) ||
+    (fechaMes >= 6 && fechaMes <= 7) ||
+    (fechaMes === 8 && fechaDia <= 21)
+  ) {
+    estacion = "verano";
+  } else if (
+    (fechaMes === 8 && fechaDia >= 22) ||
+    (fechaMes >= 9 && fechaMes <= 10) ||
+    (fechaMes === 11 && fechaDia <= 20)
+  ) {
+    estacion = "otoño";
   } else {
-    estacion = 'invierno';
+    estacion = "invierno";
   }
 
-anio = new Date(fechaNacimiento).getFullYear();
+  anio = new Date(fechaNacimiento).getFullYear();
 };
 export const calcularCoseno = () => {
   let radianes = 180 * (Math.PI / 180);
 
   coseno = Math.cos(radianes);
-
 };
