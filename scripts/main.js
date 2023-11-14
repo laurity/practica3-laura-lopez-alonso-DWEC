@@ -1,3 +1,4 @@
+//Importación de las funciones
 import {
   calcularEstacion,
   calcularEdad,
@@ -9,6 +10,7 @@ import {
   calcularCoseno,
 } from "./functions.js";
 
+//Importar las variables
 import { nombre } from "./functions.js";
 import { nombreCompleto } from "./functions.js";
 import { nombreCompletoLonguitud } from "./functions.js";
@@ -22,6 +24,7 @@ import { coseno } from "./functions.js";
 import { mayor } from "./functions.js";
 import { random } from "./functions.js";
 
+//Llamamos a las funciones
 document.addEventListener("DOMContentLoaded", function () {
   saludo();
   longitud();
@@ -34,6 +37,9 @@ document.addEventListener("DOMContentLoaded", function () {
   write();
 });
 
+/**
+ * Función que muestra la pantalla lo escrito
+ */
 const write = () => {
   document.open();
   document.write(`<p>Buenos días, <b>${nombre}</b></p>`);
@@ -69,7 +75,9 @@ const write = () => {
 
   const abrirVentanaBtn = document.getElementById("abrirVentana");
   const reiniciarVentanaBtn = document.getElementById("reiniciarVentana");
-
+/**
+ * Abrimos la nueva ventana en otra ventana nueva
+ */
   abrirVentanaBtn.addEventListener("click", () => {
     window.open(
       "ventanaNueva.html",
@@ -77,7 +85,9 @@ const write = () => {
       "height= 1000, width= 800",
     );
   });
-
+/**
+ * Reiniciamos la página
+ */
   reiniciarVentanaBtn.addEventListener("click", () => {
     location.reload();
   });
